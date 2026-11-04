@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: generated-app-20261104-052656-service
+  namespace: default
+spec:
+  selector:
+    app: generated-app-20261104-052656
+  ports:
+    - port: 80
+      targetPort: 8080
+      nodePort: 32017
+  type: NodePort
