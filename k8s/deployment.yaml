@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: generated-app-20261104-052656
+  namespace: default
+  labels:
+    app: generated-app-20261104-052656
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: generated-app-20261104-052656
+  template:
+    metadata:
+      labels:
+        app: generated-app-20261104-052656
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/homerLi007/generated-app-20261104-052656:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1Gi"
+      imagePullSecrets:
+        - name: ghcr-secret
